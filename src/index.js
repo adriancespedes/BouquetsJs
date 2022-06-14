@@ -1,9 +1,9 @@
 import "./assets/css/normalize.css";
 
 /** 
-* Show Buquets 
+* Show Bouquets
 */
-async function getbouquets() {
+async function getBouquets() {
   let url = 'https://bouquets.herokuapp.com/bouquets';
   try {
       let res = await fetch(url);
@@ -13,8 +13,8 @@ async function getbouquets() {
   }
 }
 
-async function renderbouquets() {
-  let bouquets = await getbouquets();
+async function renderBouquets() {
+  let bouquets = await getBouquets();
   let html = '';
   bouquets.forEach(bouquet => {
       let htmlSegment = `<div class="bouquet">
@@ -30,4 +30,4 @@ async function renderbouquets() {
   container.innerHTML = html;
 }
 
-renderbouquets();
+renderBouquets();
